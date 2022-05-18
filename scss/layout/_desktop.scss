@@ -1,23 +1,24 @@
 @import "../utilities/maps";
 
 /* media querie desktop */
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1024px) {
+
     /* header */
-    header h1 a{
+    header h1 a {
         font-size: 20px + 30px;
     }
 
-    ul li a{
+    ul li a {
         font-size: 25px;
     }
 
 
     /* main */
-    .h2{
+    .h2 {
         font-size: 20px + 20px;
     }
 
-    .h2Contacto{
+    .h2Contacto {
         font-size: 20px + 20px;
     }
 
@@ -31,16 +32,16 @@
         width: 240px;
     }
 
-    .sucursalImg{
+    .sucursalImg {
         width: 380px;
         margin-left: 6px;
     }
-    
-    .menuDecoration{
+
+    .menuDecoration {
         font-size: 30px;
     }
-    
-    .menuDecorationText{
-        font-size: 20px;
+
+    .menuDecorationText {
+        font-size: 32px;
     }
 }
