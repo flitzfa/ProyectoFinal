@@ -1,0 +1,413 @@
+@import "../utilities/maps";
+@import "../utilities/mixin";
+@import "../utilities/variables";
+
+
+
+/* mobile first */
+.contBody {
+    display: grid;
+    grid-template-areas: "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    align-items: center;
+}
+
+.contBodyNosotros {
+    display: grid;
+    grid-template-areas: "headerGrid"
+        "mainGridNosotros"
+        "footerGrid";
+    align-items: center;
+}
+
+.contContacto {
+    display: grid;
+    grid-template-areas: "headerGrid"
+                         "mainGridContacto"
+                         "footerGrid";
+    align-items: center;
+}
+
+.contBodySucursales {
+    display: grid;
+    grid-template-areas: "headerGrid"
+                         "mainGridSucursales"
+                         "footerGrid";
+    align-items: center;
+}
+
+body {
+    font-family: 'Hubballi', cursive;
+}
+
+/* header */
+header {
+    background: $color-header;
+}
+
+/* animacion header */
+.text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 400ms cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* animacion imagenes productos */
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+
+
+
+header h1 {
+    padding: 22px 2px 12px 2px;
+    transition: 200ms linear;
+}
+
+header h1:hover {
+    transform: scale(1.2);
+
+}
+
+header h1 a {
+    text-decoration: none;
+    color: map-get($map:$colores, $key:color-letra-header);
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+}
+
+.headerGrid {
+    grid-area: headerGrid;
+
+}
+
+.navBar {
+    @include dis-flex-jus-center;
+    flex-direction: column;
+}
+
+nav {
+    @include dis-flex-jus-center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: map-get($map:$colores, $key:color-letra-header);
+    padding: 5px 12px;
+    font-weight: bold;
+    display: inline-block;
+
+}
+
+/* main */
+main{
+    @if $manage-main-color == default{
+        background: $color-main;
+    }
+    @else{
+        background: $color-main-alt;
+    }
+}
+
+.mainGrid {
+    grid-area: mainGrid;
+}
+
+.mainGridContacto {
+    grid-area: mainGridContacto;
+}
+
+.mainGridNosotros {
+    grid-area: mainGridNosotros;
+}
+
+.mainGridSucursales {
+    grid-area: mainGridSucursales;
+}
+
+main h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: map-get($map:$colores, $key:color-letra-main);
+}
+
+.mainContacto{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.h2Contacto{
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    margin-top: 0px;
+    color: map-get($map:$colores, $key:color-letra-main);
+}
+
+.h2{
+    grid-area: h2;
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    color: #119f7e;
+}
+
+.mainGridNosotros {
+    padding-top: 0.100px;
+}
+
+.menuDecoration {
+    font-size: 20px;
+    padding-top: 55px;
+    padding-bottom: 20px;
+    color: map-get($map:$colores, $key:color-letra-main);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.textoProductos p {
+    margin: 10px;
+    font-size: 1rem;
+    font-family: 'Hubballi', cursive;
+}
+
+.imagenProductos1 {
+    display: flex;
+    justify-content: center;
+}
+
+.imgProductos1 {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.imagenProductos2{
+    display: flex;
+    justify-content: center;
+}
+
+.imgProductos2 {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.imgFamilia {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+.menuDecorationText {
+    padding: 50px 79px;
+    line-height: 2rem;
+}
+
+.mainSucursales {
+    padding: 15px;
+}
+
+.h3Sucursales {
+    font-size: 15px;
+}
+
+.sucursalesForm {
+    margin: 9px;
+}
+
+.sucursalesMap {
+    margin: 9px;
+}
+
+.sucursalImg {
+    width: 90%;
+    padding: 10px;
+}
+
+.nosotrosTitulo {
+    text-align: center;
+}
+
+.motivoContacto {
+    display: flex;
+    padding-top: 5px;
+}
+
+.motivoContacto input[type=radio][value=marketing] {
+    margin-left: 26px;
+    width: 15px;
+}
+
+.motivoContacto input[type=radio][value=finanzas] {
+    margin-left: 39px;
+    width: 15px;
+}
+
+.motivoContacto input[type=radio][value=sugerencia] {
+     margin-left: 21px;
+     width: 15px;
+}   
+
+.formularioDiv {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.formularioContacto {
+    margin: 15px 0 10px 0; 
+}
+
+.formularioContacto select {
+    width: 150px;
+}
+
+.formularioContacto textarea{
+    width: 99%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.contenedorProvincia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.contenedorBtn{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+input, select {
+    height: 25px;
+}
+
+input[type=submit], input[type=reset] {
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0;
+    width: 130px;
+    height:25px;
+    background: #119f7e6b;
+    margin: 10px;
+}
+
+.spanBlock{
+    display: block;
+}
+
+.saltoLinea{
+    padding-top: 15px;
+}
+
+main h2 {
+    transition: 200ms linear;
+}
+
+main h2:hover {
+    transform: scale(1.2);
+}
+
+.menuDecorationImg  img {
+    transition: 200ms linear;
+}
+
+.menuDecorationImg  img:hover {
+    transform: scale(1.0700);
+}
+
+a:hover {
+    color: #367e72;
+  }
+
+
+  /* footer */
+.footerGrid {
+    grid-area: footerGrid;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+
